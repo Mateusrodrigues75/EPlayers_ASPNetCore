@@ -10,6 +10,9 @@ namespace EPlayers_ASPNetCore.Models
         
         public string Nome { get; set; }
         
+        // Login
+        public string Email { get; set; }
+        public string Senha { get; set; }
         public int IdEquipe { get; set; }
 
         private const string PATH = "Database/Jogadores.csv";
@@ -18,7 +21,7 @@ namespace EPlayers_ASPNetCore.Models
             CreateFolderAndFile(PATH);
         }
         public string Prepare(Jogador j){
-            return $"{j.IdJogador};{j.Nome};{j.IdEquipe}";
+            return $"{j.IdJogador};{j.Nome};{j.IdEquipe};{j.Email};{j.Senha}";
         }
 
         public void Create(Jogador j)
@@ -47,6 +50,8 @@ namespace EPlayers_ASPNetCore.Models
                 novoJogador.IdJogador = int.Parse(linha[0]);
                 novoJogador.Nome = linha[1];
                 novoJogador.IdEquipe = int.Parse(linha[2]);
+                novoJogador.Email = linha[3];
+                novoJogador.Senha = linha[4];
 
                 jogadores.Add(novoJogador);
             }
