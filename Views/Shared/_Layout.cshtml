@@ -30,10 +30,10 @@
                     @if(ViewBag.UserName != null)
                     {
                         <li style="color: #d5379b">Olá @ViewBag.UserName!</li>
-                        <li><a asp-controller="Login" asp-action="Logout" title="voltar para a página inicial">SAIR</a></li>
+                        <li><a asp-controller="Login" asp-action="Logout" title="Deslogar da aplicação">SAIR</a></li>
                     }else{
 
-                        <li><a asp-controller="Login" asp-action="Index" title="voltar para a página inicial">LOGIN</a></li>
+                        <li><a asp-controller="Login" asp-action="Index" title="Logar na Aplicação">ENTRAR</a></li>
                     }
                     <li><a href="#" title="buscar conteudo no site"><i class="fas fa-search"></i></a></li>
                 </ul>
